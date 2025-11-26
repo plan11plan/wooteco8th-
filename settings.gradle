@@ -1,0 +1,54 @@
+rootProject.name = 'wooteco8th'
+
+// 3기
+include '3-period:java-subway-map-precourse-main_v2'
+include '3-period:java-subway-path-precourse-main'
+
+// 4기
+include '4-period:java-pairmatching-precourse-main'
+include '4-period:java-vendingmachine-precourse-main'
+
+// 5기
+include '5-period:java-bridge-main'
+include '5-period:java-menu-main'
+include '5-period:java-onboarding-main'
+
+// 6기
+include '6-period:java-baseball-6'
+include '6-period:java-christmas-6'
+include '6-period:java-lotto-6'
+include '6-period:java-oncall-6-main'
+include '6-period:java-racingcar-6'
+
+// 7기
+include '7-period:java-attendance-7-main'
+include '7-period:java-calculator-7-main'
+include '7-period:java-convenience-store-7-main'
+include '7-period:java-lotto-7-main'
+include '7-period:java-racingcar-7-main'
+
+// 8기
+include '8-period:java-calculator-8-main'
+include '8-period:java-lotto-8-main'
+include '8-period:java-racingcar-8-main'
+
+project(':3-period:java-subway-map-precourse-main_v2').projectDir = file('3-period/java-subway-map-precourse-main_v2')
+project(':3-period:java-subway-path-precourse-main').projectDir = file('3-period/java-subway-path-precourse-main')
+project(':4-period:java-pairmatching-precourse-main').projectDir = file('4-period/java-pairmatching-precourse-main')
+project(':4-period:java-vendingmachine-precourse-main').projectDir = file('4-period/java-vendingmachine-precourse-main')
+project(':5-period:java-bridge-main').projectDir = file('5-period/java-bridge-main')
+project(':5-period:java-menu-main').projectDir = file('5-period/java-menu-main')
+project(':5-period:java-onboarding-main').projectDir = file('5-period/java-onboarding-main')
+project(':6-period:java-baseball-6').projectDir = file('6-period/java-baseball-6')
+project(':6-period:java-christmas-6').projectDir = file('6-period/java-christmas-6')
+project(':6-period:java-lotto-6').projectDir = file('6-period/java-lotto-6')
+project(':6-period:java-oncall-6-main').projectDir = file('6-period/java-oncall-6-main')
+project(':6-period:java-racingcar-6').projectDir = file('6-period/java-racingcar-6')
+project(':7-period:java-attendance-7-main').projectDir = file('7-period/java-attendance-7-main')
+project(':7-period:java-calculator-7-main').projectDir = file('7-period/java-calculator-7-main')
+project(':7-period:java-convenience-store-7-main').projectDir = file('7-period/java-convenience-store-7-main')
+project(':7-period:java-lotto-7-main').projectDir = file('7-period/java-lotto-7-main')
+project(':7-period:java-racingcar-7-main').projectDir = file('7-period/java-racingcar-7-main')
+project(':8-period:java-calculator-8-main').projectDir = file('8-period/java-calculator-8-main')
+project(':8-period:java-lotto-8-main').projectDir = file('8-period/java-lotto-8-main')
+project(':8-period:java-racingcar-8-main').projectDir = file('8-period/java-racingcar-8-main')
