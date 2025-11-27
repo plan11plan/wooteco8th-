@@ -1,15 +1,16 @@
 package christmas.view;
 
-import java.util.Map;
+import christmas.model.Menu;
+import java.util.List;
 
 public class OutputView {
     public void printInitMessage(){
         System.out.println("안녕하세요! 우테코 식당 12월 이벤트 플래너입니다");
     }
 
-    public void printMyMenus(Map<String, Integer> menus){
+    public void printMyMenus(List<Menu> menus){
         System.out.println("<주문 메뉴>");
-        menus.forEach((k,v) -> System.out.println(k + " " + v+"개"));
+        menus.forEach( menu -> System.out.println(menu.name() + " " + menu.count()+"개"));
         System.out.println();
     }
 
