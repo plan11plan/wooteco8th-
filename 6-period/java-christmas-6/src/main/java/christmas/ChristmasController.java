@@ -1,6 +1,7 @@
-package christmas.controller;
+package christmas;
 
 import christmas.model.Menus;
+import christmas.model.Receipt;
 import christmas.model.VisitDate;
 import christmas.view.InputView;
 import christmas.view.OutputView;
@@ -8,25 +9,20 @@ import christmas.view.OutputView;
 public class ChristmasController {
     private final InputView inputView;
     private final OutputView outputView;
+    private final ChristmasService christmasService;
 
-    public ChristmasController(InputView inputView, OutputView outputView) {
+    public ChristmasController(InputView inputView, OutputView outputView, ChristmasService christmasService) {
         this.inputView = inputView;
         this.outputView = outputView;
+        this.christmasService = christmasService;
     }
 
     public void run() {
         VisitDate visitDate = readDate();
         Menus menus = readMenus();
-        outputView.printBenefitDetails(null,false);
         outputView.benefitGuideMessage(visitDate.getDay());
-        System.out.println("           \"<주문 메뉴>\",\n"
-                + "                \"<할인 전 총주문 금액>\",\n"
-                + "                \"<증정 메뉴>\",\n"
-                + "                \"<혜택 내역>\",\n"
-                + "                \"<총혜택 금액>\",\n"
-                + "                \"<할인 후 예상 결제 금액>\",\n"
-                + "                \"<12월 이벤트 배지>\"");
-
+        Receipt receipt = christmasService.calculateBefefitOfExpectation(visitDate, menus);
+        outputView.printMyEventResults(receipt);
     }
 
     private VisitDate readDate() {
@@ -35,19 +31,20 @@ public class ChristmasController {
             try {
                 var readDate = inputView.readDate();
                 return new VisitDate(readDate);
-            } catch (IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }
     }
-    private Menus readMenus(){
+
+    private Menus readMenus() {
         while (true) {
             try {
                 var readMenus = inputView.readMenus();
                 Menus menus = new Menus(readMenus);
                 outputView.printMyMenus(menus.getMenus());
                 return new Menus(readMenus);
-            }catch (IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }

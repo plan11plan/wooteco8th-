@@ -3,14 +3,14 @@ package christmas.model;
 import christmas.common.ErrorMessage;
 import java.util.Objects;
 
-public record Menu(String name, int count) {
+public record Menu(MenuItem menuItem, int count) {
     public Menu {
-        validate(name,count);
+        validate(menuItem,count);
     }
 
-    private void validate(String name, int count) {
-        validateNameBlank(name);
-        validateMenuItem(name);
+    private void validate(MenuItem menuItem,int count) {
+        validateNameBlank(menuItem.name());
+        validateMenuItem(menuItem.name());
         validateMinCount(count);
 
     }
